@@ -1,33 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W02 Team Activity</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W02 Team Activity</title>
 </head>
+
 <body>
+  <main>
+      <!--First Excerise/ Arturo-->
     <h2>Requirement 01</h2>
     <input id="input01">
-    <button onclick="read()">Submit</button>
+    <button onclick="read();">Submit</button>
     <div id="output"></div>
 
-    <!--Second excercise-->
 
-    <!--Third excercise-->
+    <!--Second Excercise/ Makenzie-->
 
-    <script>
-        function read() {
-        // get the input value
-        var input = document.getElementById('input01').value;
-        // get the div id 
-        var output = document.getElementById('output');
-        // Use the div id to show the value in the input
-        output.innerHTML = 'Your text is: ' + input;
+    <h2>Requirement 02</h2>
+    <input id="secondInput">
+    <button id="inputButton2" onclick="sumOfnumbers();">Sum</button>
+    <div id="sumOutput"></div>
+
+    <!--Third excercise / Pavel-->
+
+  </main>
+
+  <script>
+      //First function
+      /*Read contents of input and output to div*/
+    function read() {
+      // get the input value
+      var input = document.getElementById('input01').value;
+      // get the div id 
+      var output = document.getElementById('output');
+      // Use the div id to show the value in the input
+      output.innerHTML = 'Your text is: ' + input;
+    }
+
+    //second function
+    /*takes number as argument
+       verify input is a number 
+      finds sum of numbers leading up to the number taken
+      return sum
+      */
+
+    function sumOfnumbers() {
+      const input = parseInt(document.getElementById('secondInput').value);
+
+      const output = document.getElementById('sumOutput');
+
+      //check if input is not a number 
+      if (isNaN(input)) {
+        output.innerHTML = "error, please sumbit a valid number";
       }
-    </script>
-    
-    <!-- Second script excercise-->
+      //if input is a number, output sum
+       else if (typeof input == "number") {
+        let result = sum(input);
 
-    <!--Third script Excercise -->
+        output.innerHTML = result;
+      } 
+
+
+    }
+  //take argument of number and find sum
+    function sum(number) {
+      let answer = 0;
+
+      for (let i = 1; i <= number; i++){
+
+      answer += i;
+    }
+
+    return answer;
+    }
+
+    //Third script Excercise
+    
+  </script>
+
+
+
 </body>
+
 </html>
