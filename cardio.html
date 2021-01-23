@@ -130,6 +130,15 @@
         'car',
         'truck'
       ];
+
+      const sumOfWords = data.reduce(function(a,b){
+        if(!a[b]){
+          a[b] = 0;
+        }
+        a[b]++
+        return a
+      },{});
+      console.log(sumOfWords);
     </script>
   </body>
 </html>
