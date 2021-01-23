@@ -78,24 +78,39 @@
 
       // Array.prototype.map()
       // 2. Give us an array of the inventors' first and last names
-      
+      const names = inventors.map(inventor =>(inventor.first + ' ' + inventor.last));
+      console.log(names);
 
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
+      const bdays = inventors.sort(function (a,b) { return (a.year -b.year);});
+      console.log(bdays);
 
       // Array.prototype.reduce()
-      // 4. How many years did all the inventors live?
+      // 4. How many years did all the inventors live? // 0 = initial value.
+      const reducerFunction = (accumulator, currentValue) => {return accumulator + (currentValue.passed - currentValue.year);}
+
+      const years = inventors.reduce(reducerFunction,0);
+      console.log(years);
 
       // 5. Sort the inventors by years lived
+      const oldest = inventors.sort(function(a,b){return(inventors.reduce(reducerFunction,0));})
+      console.log(oldest);
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
       // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.
-      // const category = document.querySelector('.mw-category');
-      // const links = Array.from(category.querySelectorAll('a'));
+      //const category = document.querySelector('.mw-category');
+       //const links = Array.from(category.querySelectorAll('a'));
+      /*const streets = links.map(link => link.textContent)
+                            .filter(streetName => streetName.inlcudes('de'));
+      console.log(streets);*/
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+      const alphabet = people.sort();
+      console.log(alphabet);
+
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
