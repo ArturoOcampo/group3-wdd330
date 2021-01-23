@@ -25,6 +25,12 @@
 
     <!--Third excercise / Pavel-->
 
+    <h2>Requirement 03</h2>
+    <input type="text" id="value1" />
+        <input type="text" id="value2" />
+        <button onclick="addingMachine()">+</button><span id="error"></span>
+        <div id="showInput"></div>
+
   </main>
 
   <script>
@@ -77,6 +83,26 @@
     }
 
     //Third script Excercise
+
+    const addingMachine = () => {
+                // get the first value 
+                let value1 = document.getElementById("value1").value; 
+                // get the second value
+                let value2 = document.getElementById("value2").value; 
+                const pattern = /[0-9]/g;
+                // check that the values are valid according to the pattern
+                let validValue1 = value1.match(pattern);
+                let validValue2 = value2.match(pattern);
+                if(validValue1 && validValue2){
+                  // convert the values into numbers and sum up the values
+                let sum = Number(value1) + Number(value2);
+                // show the result
+                document.getElementById("showInput").innerHTML = sum; 
+                } else {
+                  // or tell that the values should be numbers
+                    document.getElementById("showInput").innerHTML = "Please, input both values as numbers";
+                }         
+            }    
     
   </script>
 
